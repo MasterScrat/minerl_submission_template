@@ -50,8 +50,12 @@ def main():
 
 #     actions = [env.action_space.sample() for _ in range(10)] # Just doing 10 samples in this example
 #     xposes = []
-#     for _ in range(1):
-#         obs = env.reset()
+    obs = env.reset()
+    for _ in range(1000):
+          obs, reward, done, info = env.step(env.action_space.sample())
+
+          if done:
+              env.reset()
 #         done = False
 #         netr = 0
 
@@ -71,8 +75,8 @@ def main():
 
     # Save trained model to train/ directory
     # Training 100% Completed
-    aicrowd_helper.register_progress(1)
     env.close()
+    aicrowd_helper.register_progress(1)
 
 
 if __name__ == "__main__":

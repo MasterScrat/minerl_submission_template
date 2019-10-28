@@ -1,5 +1,5 @@
 crowdai_api
-minerl
+git+https://github.com/MasterScrat/minerl.git
 coloredlogs
 matplotlib
 opencv-python
